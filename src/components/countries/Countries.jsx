@@ -4,7 +4,6 @@ import Country from "../Country/Country";
 const Countries = ({ countriesPromise }) => {
   const [visitedCountries, setVisitedCountries] = useState([]);
   const handleVisitedCountries = (country) => {
-    console.log("handleVisitedContries clicked", country);
     const newVisitedCountries = [...visitedCountries, country];
     setVisitedCountries(newVisitedCountries);
   };
@@ -17,7 +16,9 @@ const Countries = ({ countriesPromise }) => {
       <h3>Total Visited Country: {visitedCountries.length}</h3>
       <ol>
         {
-          visitedCountries.map(country => <li>{country.name.common}</li>)
+          visitedCountries.map(country => <li
+          key={country.cca3.cca3}
+          >{country.name.common}</li>)
         }
       </ol>
       <div className="countries">
